@@ -1,0 +1,29 @@
+void Book::addbook(int n,char *na,char *wname,char *pubname,int pubtime)//新增图书信息
+	{
+		flag=0;
+		num=n;
+		strcpy(bname,na);
+		strcpy(w_name,wname);
+		strcpy(pub_name,pubname);
+		pub_time=pubtime;
+		onshelf=1;
+	}
+int Book::borrowbook()         //借阅图书
+	{
+		if (onshelf==1)
+		{
+			onshelf=0;
+			return 1;
+		}
+		return 0;
+	}
+void Book::retbook()          //归还图书
+	{
+		onshelf=1;
+	}
+void Book::show()             //输出图书详细信息
+	{
+	cout <<"图书状态："<<(onshelf==1? "在架可借":"本馆借出")<<"   "<<"作者姓名："<<w_name<<"   "<<"书 名 :"<<"《"<< bname<<"》"<<"   "<<endl;
+	cout <<"图书编号: "<<num<<"   "<<"出版时间: "<<pub_time<<"   "<<"出版社: "<< pub_name<<endl; 
+	}
+
