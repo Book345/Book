@@ -1,0 +1,28 @@
+class Book                             //图书类
+{
+private:
+	int num;                           //设置图书条形码
+    int flag;                          //设置删除标记     1：已经删除  0：还未删除
+	int onshelf;                       //判断图书是否再架 1: 再架可借  0: 本馆借出
+	int pub_time;                      //设置出版年月
+	char bname[50];                    //设置图书书名
+	char pub_name[50];                 //设置出版社名称
+	char w_name[10];                   //设置作者姓名
+public:
+	Book(){}                           
+	int getnum(){ return num; }            //获取图书编号
+	int getflag(){ return flag; }          //获取删除标记
+	int getpub_time(){ return pub_time;}   //获取出版年月
+	char *getbname() { return bname; }     //获取图书书名
+	char *getpub_name(){ return pub_name;} //获取出版社名
+	char *getw_name(){ return w_name;}     //获取作者姓名
+	void setbname(char na[]){strcpy(bname,na);} //设置书名
+	void setwname(char na[]){strcpy(w_name,na);}//设置作者名字
+	void setpubtime(int number){num=number;}    //设置图书新的出版年月
+	void setpubname(char na[]){strcpy(pub_name,na);}//设置图书新的出版年月
+	void addbook(int n,char *na,char*wname,char *pub_name,int pub_time);  //新增图书
+	int borrowbook();         //借阅图书
+	void retbook();           //归还图书
+	void delbook(){ flag=1;}  //删除图书信息
+	void show();              //输出图书信息
+};
