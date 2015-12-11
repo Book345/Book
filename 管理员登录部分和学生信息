@@ -1,0 +1,26 @@
+class Admin//管理员登录
+{
+	public:
+	string adm_name;//帐号
+	string adm_passw;//密码	
+	public:
+	Admin()
+	{
+		adm_name="adm";
+		adm_passw="123";		
+	}
+};
+
+class Stu//学生信息
+{
+	public:
+	string stu_name;
+	string stu_phone;//联系方式
+	string stu_num;//学号（登录帐号）
+	string password;//密码
+	float debt;//欠费额
+	LendBook lendbook;//用户借书信息
+	
+	public:
+	void show_stu();//把此人所有信息（包括借书）显示出来	
+};
